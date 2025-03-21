@@ -1,3 +1,8 @@
+/**
+ * La clase representa una cuenta bancaria
+ * @author isard
+ * @version 1.0
+ */
 package Cuentas;
 public class CCuenta {
 
@@ -19,7 +24,10 @@ public class CCuenta {
     }
     
     
-
+    /**
+     * Obtiene el nombre del titular de la cuenta
+     * @return Nombre del titular
+     */
     public String getNombre() {
 		return nombre;
 	}
@@ -27,7 +35,11 @@ public class CCuenta {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+	
+	/**
+	 * Obtiene el nímero de la cuenta bancaria
+	 * @return Número de cuenta
+	 */
 	public String getCuenta() {
 		return cuenta;
 	}
@@ -36,6 +48,10 @@ public class CCuenta {
 		this.cuenta = cuenta;
 	}
 
+	/**
+	 * Obtiene el saldo actual de la cuenta bancaria
+	 * @return Saldo disponible
+	 */
 	public double getSaldo() {
 		return saldo;
 	}
@@ -44,6 +60,10 @@ public class CCuenta {
 		this.saldo = saldo;
 	}
 
+	/**
+	 * Obtiene el tipo de interés de la cuenta
+	 * @return Tipo de interés
+	 */
 	public double getTipoInterés() {
 		return tipoInterés;
 	}
@@ -52,11 +72,20 @@ public class CCuenta {
 		this.tipoInterés = tipoInterés;
 	}
 
+	/**
+	 * Consulta el saldo actual de la cuenta
+	 * @return Saldo actual
+	 */
 	public double estado()
     {
         return saldo;
     }
 
+	/**
+	 * Método para ingresar dinero en la cuenta
+	 * @param cantidad debe ser positiva
+	 * @throws Exception si la cantidad es negariva o 0
+	 */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -64,6 +93,11 @@ public class CCuenta {
         saldo = saldo + cantidad;
     }
 
+    /**
+     * Método para retirar dinero de la cuenta
+     * @param cantidad debe ser positiva
+     * @throws Exception si la cantidad es negativa, 0 o superior al saldo actual
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
